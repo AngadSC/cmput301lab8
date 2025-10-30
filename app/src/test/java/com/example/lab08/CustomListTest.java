@@ -13,16 +13,16 @@ public class CustomListTest {
     }
     @Test
     void testDelete() {
-        CityList list = mockCityList();
+        CustomList list = new CustomList();
         City beaumont = new City("Beaumont", "Alberta");
         assertThrows(IllegalArgumentException.class, () -> list.delete(beaumont));
     }
     @Test
     void testCountCities() {
-        CityList list = new CityList();
+        CustomList list = new CustomList();
         assertEquals(0,list.countCities());
-        list.add(new City ("calgary","alberta"));
-        list.add(new City("edmonton", "alberta"));
+        list.addCity(new City ("calgary","alberta"));
+        list.addCity(new City("edmonton", "alberta"));
         assertEquals(2,list.countCities());
     }
 }
