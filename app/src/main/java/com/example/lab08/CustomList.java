@@ -19,6 +19,16 @@ public class CustomList {
         cities.add(city);
     }
 
+    public void delete(City city) {
+        if (!cities.remove(city)) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    public int countCities () {
+        return cities.size();
+    }
+
     
 
     // Will be implemented later using TDD (leave blank for now)
